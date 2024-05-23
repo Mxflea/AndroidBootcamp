@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    tools:context=".Home"
+    tools:ignore="ExtraText">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleMargin="8dp"
+        app:buttonGravity="center_vertical"
+        app:title="Bootcamp Android"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_rick_and_morty"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="60dp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                style="@style/bootcampAndroid.subTitle"
+                android:layout_marginHorizontal="24dp"
+                android:text="@string/text1"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/bootcampAndroid.subTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_weight="5"
+                android:text="@string/text2"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="120dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button1"
+                style="@style/bootcampAndroid.button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="16dp"
+                android:text="@string/firs_button"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialComponents.MaterialCalendar.Year" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button2"
+                style="@style/bootcampAndroid.button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/second_button"
+                android:layout_marginTop="24dp"
+                android:layout_marginHorizontal="24dp"
+                android:paddingVertical="16dp"
+                android:paddingHorizontal="20dp"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialComponents.MaterialCalendar.Year"/>
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

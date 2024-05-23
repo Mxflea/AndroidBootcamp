@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/ic_arrow"
+        app:titleMargin="8dp"
+        app:buttonGravity="center_vertical"
+        app:title="Bootcamp Android"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/armothy"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                app:srcCompat="@drawable/ic_armothy"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginHorizontal="24dp"
+                android:textSize="24sp"
+                tools:text="Armothy"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/titleRace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/gray2"
+                android:layout_marginHorizontal="24dp"
+                android:textSize="14sp"
+                android:text="@string/detail_race"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/race"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                tools:text="humano"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/titleStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/gray2"
+                android:layout_marginHorizontal="24dp"
+                android:textSize="14sp"
+                android:text="@string/detail_status"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                tools:text="vivo"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/titleOrigin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/gray2"
+                android:layout_marginHorizontal="24dp"
+                android:textSize="14sp"
+                android:text="@string/detail_origin"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/origin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                tools:text="Post-Apocalyptic Earth"/>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</RelativeLayout>

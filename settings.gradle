@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://packagecloud.io/priv/8568b3a08b58c28b0a1293925f9fe0c52a2adcf1ce6f194f/Stone/stoneid/maven2" }
+        maven { url "https://jitpack.io" }
+    }
+}
+
+enableFeaturePreview("VERSION_CATALOGS")
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+rootProject.name = "AndroidBootcamp"
+include ':app'

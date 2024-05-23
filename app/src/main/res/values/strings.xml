@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">AndroidBootcamp</string>
+    <string name="text1">O universo de Rick and Morty é composto por uma série de criaturas  bizarras e ambientes inóspitos.</string>
+    <string name="text2">Este app foi feito para que você possa conhecer tudo isso de uma maneira simples e divertida.</string>
+    <string name="firs_button">Personagens</string>
+    <string name="second_button">Lugares</string>
+    <string name="rick"><b>Rick</b></string>
+
+    <string name="detail_race">raça:</string>
+    <string name="detail_status">status:</string>
+    <string name="detail_origin">origem:</string>
+    <string name="detail_type">tipo:</string>
+    <string name="detail_dimension">dimensão:</string>
+    <string name="detail_id">id:</string>
+</resources>

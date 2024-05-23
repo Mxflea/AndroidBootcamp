@@ -1,0 +1,96 @@
+[versions]
+# Plugins
+plugin-android = "7.1.0"
+plugin-ksp = "1.6.10-1.0.2"
+plugin-ktlint = "10.2.1"
+
+kotlin = "1.6.10"
+
+# Stone
+stoneCactus = "4.1.63"
+
+# DI
+kodein = "7.10.0"
+
+# Service
+coroutines = "1.6.0"
+serialization = "1.3.2"
+serializationConverter = "0.8.0"
+retrofit = "2.9.0"
+okHttp3 ="4.6.0"
+
+# Android
+materialDesign = "1.5.0"
+appCompat = "1.4.1"
+activity = "1.4.0"
+lifecycle = "2.4.0"
+groupie = "2.9.0"
+
+# Compose
+compose = "1.1.1"
+composeActivity = "1.4.0"
+lyricist = "1.1.0"
+voyager = "1.0.0-beta16"
+coil = "2.0.0-rc02"
+
+# Test
+junit = "4.13.2"
+mockk = "1.12.2"
+mockWebServer = "4.9.3"
+
+[libraries]
+# Stone
+stoneCactus-core = { module = "co.stone:cactus-core", version.ref = "stoneCactus" }
+stoneCactus-utils = { module = "co.stone:cactus-utils", version.ref = "stoneCactus" }
+stoneCactus-flowNavigator = { module = "co.stone:cactus-flow-navigator", version.ref = "stoneCactus" }
+
+# DI
+kodein = { module = "org.kodein.di:kodein-di-framework-android-x-viewmodel", version.ref = "kodein" }
+
+# Service
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+serialization-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "serializationConverter" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+okHttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okHttp3" }
+okHttpLogging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okHttp3" }
+
+# Android
+materialDesign = { module = "com.google.android.material:material", version.ref = "materialDesign" }
+appCompat = { module = "androidx.appcompat:appcompat", version.ref = "appCompat" }
+activity = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
+lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+lifecycle-viewModel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+groupie = { module = "com.github.lisawray.groupie:groupie", version.ref = "groupie" }
+groupie-viewBinding = { module = "com.github.lisawray.groupie:groupie-viewbinding", version.ref = "groupie" }
+coil = { module = "io.coil-kt:coil", version.ref = "coil" }
+
+# Compose
+compose-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "compose" }
+compose-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "compose" }
+compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose-animation = { module = "androidx.compose.animation:animation", version.ref = "compose" }
+compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+compose-activity = { module = "androidx.activity:activity-compose", version.ref = "composeActivity" }
+lyricist = { module = "cafe.adriel.lyricist:lyricist", version.ref = "lyricist" }
+lyricist-processor = { module = "cafe.adriel.lyricist:lyricist-processor", version.ref = "lyricist" }
+voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
+voyager-navigator-kodein = { module = "cafe.adriel.voyager:voyager-kodein", version.ref = "voyager" }
+voyager-navigator-transitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyager" }
+kodein-compose = { module = "org.kodein.di:kodein-di-framework-compose", version.ref = "kodein" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+
+# Test
+junit = { module = "junit:junit", version.ref = "junit" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+mockWebServer = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "mockWebServer" }
+
+[bundles]
+stoneCactus = ["stoneCactus-core", "stoneCactus-utils", "stoneCactus-flowNavigator"]
+di = ["kodein"]
+service = ["coroutines-android", "serialization", "serialization-converter", "retrofit", "okHttp", "okHttpLogging"]
+android = ["materialDesign", "appCompat", "activity", "lifecycle-runtime", "lifecycle-viewModel", "groupie", "groupie-viewBinding", "coil"]
+compose = ["compose-compiler", "compose-runtime", "compose-ui", "compose-ui-tooling", "compose-animation", "compose-material", "compose-activity", "lyricist", "lyricist-processor", "voyager-navigator", "voyager-navigator-kodein", "voyager-navigator-transitions", "kodein-compose", "coil-compose"]
+test = ["junit", "coroutines-test", "mockk", "mockWebServer"]

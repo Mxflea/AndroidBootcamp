@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="bootcampAndroid">
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:layout_marginTop">25sp</item>
+        <item name="android:layout_marginBottom">25sp</item>
+    </style>
+
+    <style name="bootcampAndroid.subTitle">
+        <item name="android:textSize">21sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="bootcampAndroid.button">
+        <item name="android:textSize">16sp</item>
+        <item name="android:backgroundTint">@color/gray</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>
