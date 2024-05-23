@@ -3,8 +3,9 @@ Um aplicativo de informações sobre a animção Rick and Morty que desenvolvi p
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src="/result/Screenshot_20230217_015921.png" width="260">&emsp;<img src="/result/Screenshot_20230217_020035.png" width="260">&emsp;<img src="/result/Screenshot_20230217_020117.png" width="260">
-![WhatsApp Image 2024-05-23 at 00 20 48](https://github.com/Mxflea/AndroidBootcamp/assets/118404343/fb9cf5d6-dff0-4675-b663-184dd47c3cd8)
+![Design sem nome](https://github.com/Mxflea/AndroidBootcamp/assets/118404343/6d5d26de-76c4-44ba-bcb9-d0226328bdcb)
+![Design sem nome](https://github.com/Mxflea/AndroidBootcamp/assets/118404343/f0a0772b-132d-4da3-be91-60abee86bdbd)
+
 
 ## Tecnologias
 * Kotlin
