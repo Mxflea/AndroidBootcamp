@@ -1,4 +1,4 @@
-package co.stone.androidbootcamp
+package co.stone.androidbootcamp.UI
 
 import java.io.Serializable
 

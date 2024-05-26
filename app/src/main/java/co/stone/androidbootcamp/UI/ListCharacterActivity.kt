@@ -1,4 +1,4 @@
-package co.stone.androidbootcamp
+package co.stone.androidbootcamp.UI
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -237,7 +237,7 @@ class ListCharacterActivity : AppCompatActivity() {
     private fun onItemSelected(item: Item){
         val intent = Intent(this, DetailsActivity:: class.java)
         intent.putExtra(DetailsActivity.CHARACTER, item)
-        intent.putExtra(ListCharacterActivity.IS_CHARACTER, isCharacter == true)
+        intent.putExtra(IS_CHARACTER, isCharacter == true)
         startActivity(intent)
     }
 

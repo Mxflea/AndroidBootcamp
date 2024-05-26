@@ -1,9 +1,10 @@
-package co.stone.androidbootcamp
+package co.stone.androidbootcamp.UI
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import co.stone.androidbootcamp.R
 import co.stone.androidbootcamp.databinding.ActivityDetailsBinding
 
 class DetailsActivity : AppCompatActivity() {
