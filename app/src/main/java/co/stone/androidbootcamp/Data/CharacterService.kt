@@ -1,6 +1,9 @@
 package co.stone.androidbootcamp.Data
 
-import retrofit2.Retrofit
+import co.stone.androidbootcamp.domain.Character
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import java.io.Serializable
 
 class CharacterService {
 
@@ -8,11 +11,15 @@ class CharacterService {
         GatewayBuilder.build<CharacterGateway>()
     }
 
-   suspend fun getCharacters(): List<CharacterResponse> =
-        gateway
-            .getCharacters()
-            .results
+   suspend fun getCharacters(): List<Character> =
+       withContext(Dispatchers.IO) {
+           gateway
+               .getCharacters()
+               .results
+               .map(CharacterMapper::toDomain)
+       }
 
-        suspend fun getCharacter(id: Int): CharacterResponse =
+    suspend fun getCharacter(id: Serializable): Character =
             gateway.getCharacter(id)
+                .let(CharacterMapper:: toDomain)
 }

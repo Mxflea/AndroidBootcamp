@@ -2,6 +2,7 @@ package co.stone.androidbootcamp.Data
 
 import retrofit2.http.GET
 import retrofit2.http.Path
+import java.io.Serializable
 
 interface CharacterGateway {
 
@@ -10,7 +11,7 @@ interface CharacterGateway {
 
     @GET("character/{id}")
     suspend fun getCharacter(
-        @Path("id") id: Int
+        @Path("id") id: Serializable
     ): CharacterResponse
 
 }

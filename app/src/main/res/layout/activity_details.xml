@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.DetailsActivity">
+    tools:context=".UI.detail.DetailsActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -49,26 +49,7 @@
                 tools:text="Armothy"/>
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/titleRace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/gray2"
-                android:layout_marginHorizontal="24dp"
-                android:textSize="14sp"
-                android:text="@string/detail_race"/>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/race"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="24dp"
-                android:textColor="@color/black"
-                android:textSize="22sp"
-                tools:text="humano"/>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/titleStatus"
+                android:id="@+id/titleFirstField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -79,12 +60,31 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                tools:text="morto"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/titleSecondField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/gray2"
+                android:layout_marginHorizontal="24dp"
+                android:textSize="14sp"
+                android:text="@string/detail_race"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/race"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:textColor="@color/black"
                 android:textSize="22sp"
-                tools:text="vivo"/>
+                tools:text="humano"/>
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/titleOrigin"

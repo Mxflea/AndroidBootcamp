@@ -1,10 +1,11 @@
-package co.stone.androidbootcamp.UI
+package co.stone.androidbootcamp.UI.home
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import co.stone.androidbootcamp.Data.CharacterService
+import co.stone.androidbootcamp.UI.list.ListItemsActivity
 import co.stone.androidbootcamp.databinding.ActivityHomeBinding
 import kotlinx.coroutines.launch
 
@@ -32,16 +33,16 @@ class Home : AppCompatActivity() {
 
     private fun setup() {
 
-        val intentList = Intent(this, ListCharacterActivity::class.java)
+        val intentList = Intent(this, ListItemsActivity::class.java)
         binding.apply {
             button1.setOnClickListener{
-                intentList.putExtra(ListCharacterActivity.IS_CHARACTER, true)
+                intentList.putExtra(ListItemsActivity.IS_CHARACTER, true)
                 startActivity(intentList)
             //leva para a lista de personagens
             }
             
             button2.setOnClickListener {
-                intentList.putExtra(ListCharacterActivity.IS_CHARACTER, false)
+                intentList.putExtra(ListItemsActivity.IS_CHARACTER, false)
                 startActivity(intentList)
             }
         }

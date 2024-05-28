@@ -13,16 +13,16 @@
         android:theme="@style/Theme.AndroidBootcamp"
         tools:targetApi="31">
         <activity
-            android:name=".UI.DetailsActivity"
+            android:name=".UI.detail.DetailsActivity"
             android:exported="false" />
         <activity
             android:name=".Lugares"
             android:exported="false" />
         <activity
-            android:name=".UI.ListCharacterActivity"
+            android:name=".UI.list.ListItemsActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.Home"
+            android:name=".UI.home.Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,15 +1,16 @@
-package co.stone.androidbootcamp.UI
+package co.stone.androidbootcamp.UI.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import co.stone.androidbootcamp.databinding.ItemRowBinding
+import co.stone.androidbootcamp.domain.Character
 
 class ListAdapter: RecyclerView.Adapter<ListAdapter.ViewHolder>() {
     inner class ViewHolder(val binding: ItemRowBinding): RecyclerView.ViewHolder(binding.root)
-    var onClick: ((Item) -> Unit)? = null
+    var onClick: ((Character) -> Unit)? = null
 
-    private var items: MutableList<Item> = mutableListOf()
+    private var items: MutableList<Character> = mutableListOf()
     set(value){
         field = ArrayList(value)
     }
@@ -25,8 +26,8 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
         holder.apply {
             val item = items[position]
-            binding.title.text = item.secondField
-            binding.description.text = item.thirdField
+            binding.title.text = item.name
+            binding.description.text = item.status.name
 
             itemView.setOnClickListener{
                 onClick?.invoke(item)
@@ -34,7 +35,7 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.ViewHolder>() {
         }
     }
 
-    fun addItems(itemsToAdd: List<Item>) {
+    fun addItems(itemsToAdd: List<Character>) {
         this.items.addAll(itemsToAdd)
         notifyDataSetChanged()
     }
