@@ -13,4 +13,10 @@ data class CharacterResponse(
     val name: String,
     val status: String,
     val species: String,
+    val origin: Location,
+)
+
+@Serializable
+data class Location (
+    var name: String
 )

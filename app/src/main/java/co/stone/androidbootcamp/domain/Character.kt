@@ -1,12 +1,17 @@
 package co.stone.androidbootcamp.domain
 
+import co.stone.androidbootcamp.Data.Location
+
 
 class Character (
     val id: Int,
     val name: String,
     val status: CharacterStatus,
     val species: String,
+    val origin: Location
     )
+
+
 
 enum class CharacterStatus(
     val status: String

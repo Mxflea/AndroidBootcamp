@@ -43,14 +43,14 @@ class DetailsActivity : AppCompatActivity() {
                          titleFirstField.text = getString(R.string.detail_status)
                      } else {
                          armothy.visibility = View.GONE
-                         titleOrigin.visibility = View.GONE
+                         titleThirdField.visibility = View.GONE
                          titleSecondField.text = getString(R.string.detail_type)
                          titleFirstField.text = getString(R.string.detail_dimension)
                      }
                        name.text = character.name
                        status.text = character.status.name
                        race.text = character.species
-                      // origin.text = character.origin
+                       origin.text = character.origin.name
                    }
             }
 

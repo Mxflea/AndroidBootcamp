@@ -3,6 +3,7 @@ package co.stone.androidbootcamp.Data
 import co.stone.androidbootcamp.domain.Character
 import co.stone.androidbootcamp.domain.CharacterStatus
 
+
 object CharacterMapper {
 
     fun toDomain(response: CharacterResponse) =
@@ -12,6 +13,7 @@ object CharacterMapper {
                 name = name,
                 status = CharacterStatus.toStatus(status),
                 species = species,
+                origin = origin
             )
         }
 
