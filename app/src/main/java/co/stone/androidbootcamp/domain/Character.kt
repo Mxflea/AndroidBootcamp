@@ -8,7 +8,8 @@ class Character (
     val name: String,
     val status: CharacterStatus,
     val species: String,
-    val origin: Location
+    val origin: Location,
+    val image: String
     )
 
 

@@ -8,6 +8,8 @@ import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import co.stone.androidbootcamp.R
 import co.stone.androidbootcamp.databinding.ActivityDetailsBinding
+import coil.imageLoader
+import com.squareup.picasso.Picasso
 import kotlinx.coroutines.launch
 
 
@@ -37,12 +39,12 @@ class DetailsActivity : AppCompatActivity() {
 
                    binding.apply{
                      if (isCharacter == true){
-                         armothy.visibility = View.VISIBLE
+                         image.visibility = View.VISIBLE
                          origin.visibility = View.VISIBLE
                          titleSecondField.text = getString(R.string.detail_race)
                          titleFirstField.text = getString(R.string.detail_status)
                      } else {
-                         armothy.visibility = View.GONE
+                         image.visibility = View.GONE
                          titleThirdField.visibility = View.GONE
                          titleSecondField.text = getString(R.string.detail_type)
                          titleFirstField.text = getString(R.string.detail_dimension)
@@ -51,6 +53,10 @@ class DetailsActivity : AppCompatActivity() {
                        status.text = character.status.name
                        race.text = character.species
                        origin.text = character.origin.name
+                       Picasso.get()
+                           .load(character.image)
+                           .resize(1000, 1000)
+                           .into(image)
                    }
             }
 

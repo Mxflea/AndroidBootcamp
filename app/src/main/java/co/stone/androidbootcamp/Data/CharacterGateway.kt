@@ -13,5 +13,4 @@ interface CharacterGateway {
     suspend fun getCharacter(
         @Path("id") id: Serializable
     ): CharacterResponse
-
 }

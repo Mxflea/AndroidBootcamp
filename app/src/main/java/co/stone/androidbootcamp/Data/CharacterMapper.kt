@@ -13,7 +13,8 @@ object CharacterMapper {
                 name = name,
                 status = CharacterStatus.toStatus(status),
                 species = species,
-                origin = origin
+                origin = origin,
+                image = image
             )
         }
 
