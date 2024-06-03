@@ -19,7 +19,8 @@ class DetailsActivity : AppCompatActivity() {
     lateinit var binding: ActivityDetailsBinding
     private val isCharacter by lazy {intent?.extras?.getBoolean(IS_CHARACTER, true)}
 
-    private val viewModel by viewModels<DetailViewModel> (DetailViewModel.Factory::build)
+    private val viewModel by viewModels<DetailViewModel>(DetailViewModel.Factory::build)
+    private val viewModelLocation by viewModels<DetailViewModelLocation>(DetailViewModelLocation.Factory::build)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,27 +37,30 @@ class DetailsActivity : AppCompatActivity() {
         characterId?.let {id ->
             lifecycleScope.launch {
                 val character = viewModel.getCharacter(id)
+                val location = viewModelLocation.getLocation(id)
 
                    binding.apply{
                      if (isCharacter == true){
                          image.visibility = View.VISIBLE
-                         origin.visibility = View.VISIBLE
-                         titleSecondField.text = getString(R.string.detail_race)
-                         titleFirstField.text = getString(R.string.detail_status)
+                         name.text = character.name
+                         status.text = character.status.name
+                         race.text = character.species
+                         origin.text = character.origin.name
+                         Picasso.get()
+                           .load(character.image)
+                           .resize(1000, 1000)
+                           .into(image)
+
                      } else {
                          image.visibility = View.GONE
                          titleThirdField.visibility = View.GONE
                          titleSecondField.text = getString(R.string.detail_type)
                          titleFirstField.text = getString(R.string.detail_dimension)
+                         name.text = location.name
+                         status.text = location.type
+                         race.text = location.dimension
                      }
-                       name.text = character.name
-                       status.text = character.status.name
-                       race.text = character.species
-                       origin.text = character.origin.name
-                       Picasso.get()
-                           .load(character.image)
-                           .resize(1000, 1000)
-                           .into(image)
+//
                    }
             }
 

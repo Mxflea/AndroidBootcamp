@@ -4,16 +4,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import co.stone.androidbootcamp.databinding.ItemRowBinding
-import co.stone.androidbootcamp.domain.Character
+import co.stone.androidbootcamp.domain.Location
 
-class ListAdapter: RecyclerView.Adapter<ListAdapter.ViewHolder>() {
+class ListAdapterLocation: RecyclerView.Adapter<ListAdapterLocation.ViewHolder>() {
     inner class ViewHolder(val binding: ItemRowBinding): RecyclerView.ViewHolder(binding.root)
-    var onClick: ((Character) -> Unit)? = null
+    var onClickLocation: ((Location) -> Unit)? = null
 
-    private var items: MutableList<Character> = mutableListOf()
+    private var items: MutableList<Location> = mutableListOf()
         set(value){
-        field = ArrayList(value)
-    }
+            field = ArrayList(value)
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -27,15 +27,15 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.ViewHolder>() {
         holder.apply {
             val item = items[position]
             binding.title.text = item.name
-            binding.description.text = item.status.name
+            binding.description.text = item.type
 
             itemView.setOnClickListener{
-                onClick?.invoke(item)
+                onClickLocation?.invoke(item)
             }
         }
     }
 
-    fun addItems(itemsToAdd: List<Character>) {
+    fun addItemsLocation(itemsToAdd: List<Location>) {
         this.items.addAll(itemsToAdd)
         notifyDataSetChanged()
     }

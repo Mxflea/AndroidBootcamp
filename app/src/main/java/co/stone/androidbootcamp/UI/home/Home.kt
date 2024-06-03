@@ -4,7 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
-import co.stone.androidbootcamp.Data.CharacterService
+import co.stone.androidbootcamp.Data.Character.CharacterService
+import co.stone.androidbootcamp.Data.Location.LocationService
 import co.stone.androidbootcamp.UI.list.ListItemsActivity
 import co.stone.androidbootcamp.databinding.ActivityHomeBinding
 import kotlinx.coroutines.launch
@@ -12,8 +13,14 @@ import kotlinx.coroutines.launch
 
 class Home : AppCompatActivity() {
 
-    private val service by lazy {
+    private val isCharacter by lazy {intent?.extras?.getBoolean(ListItemsActivity.IS_CHARACTER, true)}
+
+    private val serviceCharacter by lazy {
         CharacterService()
+    }
+
+    private val serviceLocation by lazy {
+       LocationService()
     }
 
     lateinit var binding: ActivityHomeBinding
@@ -24,10 +31,26 @@ class Home : AppCompatActivity() {
 
        setup()
 
+        if (isCharacter == true){
+            setupDataCharacter()
+        } else {
+            setupDataLocation()
+        }
+
+    }
+
+    private fun setupDataCharacter(){
         lifecycleScope.launch{
-            service.getCharacters()
+            serviceCharacter.getCharacters()
                 .forEach {println(it)}
 
+        }
+    }
+
+    private fun setupDataLocation(){
+        lifecycleScope.launch{
+            serviceLocation.getLocations()
+                .forEach {println(it)}
         }
     }
 

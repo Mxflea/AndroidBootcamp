@@ -10,19 +10,27 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import co.stone.androidbootcamp.UI.detail.DetailsActivity
 import co.stone.androidbootcamp.databinding.ActivityListCharacterBinding
 import co.stone.androidbootcamp.domain.Character
+import co.stone.androidbootcamp.domain.Location
 import kotlinx.coroutines.launch
 
 class ListItemsActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityListCharacterBinding
 
-    private val viewModel by viewModels<ListViewModel>(ListViewModel.Factory:: build)
+    private val viewModelCharacter by viewModels<ListViewModelCharacter>(ListViewModelCharacter.Factory:: build)
+    private val viewModelLocation by viewModels<ListViewModelLocation>(ListViewModelLocation.Factory:: build)
 
     private val isCharacter by lazy {intent?.extras?.getBoolean(IS_CHARACTER, true)}
 
     private val listAdapter: ListAdapter by lazy {
         ListAdapter().apply{
             onClick = this@ListItemsActivity:: onItemSelected
+        }
+    }
+
+    private val listAdapterLocation: ListAdapterLocation by lazy {
+        ListAdapterLocation().apply{
+            onClickLocation = this@ListItemsActivity:: onItemSelectedLocation
         }
     }
 
@@ -34,7 +42,11 @@ class ListItemsActivity : AppCompatActivity() {
         setup()
 
         lifecycleScope.launch{
-            viewModel.getCharacters().forEach(::println)
+            viewModelCharacter.getCharacters().forEach(::println)
+        }
+
+        lifecycleScope.launch{
+            viewModelLocation.getLocations().forEach(::println)
         }
     }
 
@@ -43,22 +55,31 @@ class ListItemsActivity : AppCompatActivity() {
         val divider =   DividerItemDecoration(this@ListItemsActivity, DividerItemDecoration.VERTICAL)
         binding.apply {
             listItems.addItemDecoration(divider)
-            listItems.adapter = listAdapter
 
             setSupportActionBar(toolbar)
             supportActionBar?.setDisplayShowHomeEnabled(true)
         }
         if (isCharacter == true){
             setupDataCharacter()
+            binding.listItems.adapter = listAdapter
         } else {
-            //Todo
+            setupDataLocation()
+            binding.listItems.adapter = listAdapterLocation
+
         }
     }
 
     private fun setupDataCharacter(){
         lifecycleScope.launch{
-            viewModel.getCharacters()
+            viewModelCharacter.getCharacters()
                 .let(listAdapter::addItems)
+        }
+    }
+
+    private fun setupDataLocation(){
+        lifecycleScope.launch{
+            viewModelLocation.getLocations()
+                .let(listAdapterLocation::addItemsLocation)
         }
     }
 
@@ -76,6 +97,13 @@ class ListItemsActivity : AppCompatActivity() {
         val intent = Intent(this, DetailsActivity:: class.java)
         intent.putExtra(DetailsActivity.CHARACTER_ID, item.id)
         intent.putExtra(IS_CHARACTER, isCharacter == true)
+        startActivity(intent)
+    }
+
+    private fun onItemSelectedLocation(item: Location){
+        val intent = Intent(this, DetailsActivity:: class.java)
+        intent.putExtra(DetailsActivity.CHARACTER_ID, item.id)
+        intent.putExtra(IS_CHARACTER, isCharacter == false)
         startActivity(intent)
     }
 

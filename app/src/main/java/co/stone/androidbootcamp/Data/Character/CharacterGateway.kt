@@ -1,5 +1,7 @@
-package co.stone.androidbootcamp.Data
+package co.stone.androidbootcamp.Data.Character
 
+import co.stone.androidbootcamp.Data.CharacterResponse
+import co.stone.androidbootcamp.Data.CharactersResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 import java.io.Serializable

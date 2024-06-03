@@ -1,6 +1,6 @@
 package co.stone.androidbootcamp.domain
 
-import co.stone.androidbootcamp.Data.Location
+import co.stone.androidbootcamp.Data.Place
 
 
 class Character (
@@ -8,7 +8,7 @@ class Character (
     val name: String,
     val status: CharacterStatus,
     val species: String,
-    val origin: Location,
+    val origin: Place,
     val image: String
     )
 

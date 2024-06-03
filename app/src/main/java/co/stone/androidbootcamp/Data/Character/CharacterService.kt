@@ -1,5 +1,6 @@
-package co.stone.androidbootcamp.Data
+package co.stone.androidbootcamp.Data.Character
 
+import co.stone.androidbootcamp.Data.GatewayBuilder
 import co.stone.androidbootcamp.domain.Character
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
